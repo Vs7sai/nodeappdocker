@@ -22,8 +22,8 @@ jobs:
     - name: Deploy to ECR
       run: |
         aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 637423501772.dkr.ecr.us-east-1.amazonaws.com
-        docker  tag my-node-docker-image:tagname   637423501772.dkr.ecr.us-east-1.amazonaws.com/node-repository
-        docker push your-account-id.dkr.ecr.your-aws-region.amazonaws.com/your-ecr-repository:latest
+        docker  tag my-node-docker-image    637423501772.dkr.ecr.us-east-1.amazonaws.com/node-repository
+        docker push 637423501772.dkr.ecr.us-east-1.amazonaws.com/node-repository
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
